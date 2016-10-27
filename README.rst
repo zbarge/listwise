@@ -18,7 +18,9 @@ listw = listwise.ListWise("C:/listwise_data.db", username, api_key)
 One-off email validation
 =========================
 email = 'zekebarge@gmail.com'
+
 deep_cleaned = listw.deep_clean_one(email)
+
 quick_cleaned = listw.quick_clean_one(email)
 
 listw.db.con.commit() #To commit your updates to the database
@@ -32,7 +34,9 @@ import pandas as pd
 df = pd.read_csv("C:/path/to/file.csv")
 
 #All updates are automatically committed to SQLite.
+
 deep_cleaned_df = listw.deep_clean_frame(df)
+
 quick_cleaned_df = listw.quick_clean_frame(df)
 
 
