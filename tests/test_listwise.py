@@ -7,6 +7,8 @@ Created on Thu Oct 27 14:21:23 2016
 import os
 import pytest
 import pandas as pd
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import listwise
 from listwise.ListWise import ERROR_CODE
 

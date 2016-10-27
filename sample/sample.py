@@ -6,8 +6,10 @@ Created on Thu Oct 27 13:27:01 2016
 """
 
 import os
-import listwise
 import pandas as pd
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import listwise
 
 USERNAME = "" #ENTER USERNAME
 API_KEY = "" #ENTER API_KEY
