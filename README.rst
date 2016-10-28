@@ -13,18 +13,19 @@ Thanks to them for giving me permission to open-source this.
 
 Installation
 ------------
-
+::
 pip install listwise
 
 Connecting to the API
 ---------------------
+::
+import listwise
 
 listw = listwise.ListWise("C:/listwise_data.db", username, api_key)
 
 
 One-off email validation
 ------------------------
-
 ::
     email = 'zekebarge@gmail.com'
     
