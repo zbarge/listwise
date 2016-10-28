@@ -4,7 +4,7 @@ ListWise - Python REST API Wrapper for ListWise email validation.
 In order to use all of the features of this package you must have an active subscription with listwisehq.
 https://www.listwisehq.com/email-address-cleaner/index.php
 
-This packaged was developed during my employment with Kennedy Marketing Group.
+This package was developed during my employment with Kennedy Marketing Group.
 Thanks to them for giving me permission to open-source this.
 
 - listwise enables users to easily clean email addresses via the ListWise REST API.
@@ -15,15 +15,15 @@ Installation
 ------------
 ::
 
-pip install listwise
+	pip install listwise
 
 Connecting to the API
 ---------------------
 ::
 
-import listwise
+	import listwise
 
-listw = listwise.ListWise("C:/listwise_data.db", username, api_key)
+	listw = listwise.ListWise("C:/listwise_data.db", username, api_key)
 
 
 One-off email validation
