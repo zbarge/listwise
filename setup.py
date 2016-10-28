@@ -1,11 +1,9 @@
 from __future__ import print_function
-from setuptools import setup, find_packages
+from setuptools import setup
 from setuptools.command.test import test as TestCommand
 import io
-import codecs
 import os
 import sys
-import re
 
 import listwise
 
@@ -19,8 +17,12 @@ def read(*filenames, **kwargs):
         with io.open(filename, encoding=encoding) as f:
             buf.append(f.read())
     return sep.join(buf)
-
-long_description = read('README.rst', 'CHANGES.rst')
+    
+try:
+    long_description = read('README.rst', 'CHANGES.rst')
+except FileNotFoundError as e:
+    print("Couldn't find {}".format(e))
+    long_description = "Go to github for long description."
 
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -32,6 +34,7 @@ class PyTest(TestCommand):
         import pytest
         errcode = pytest.main(self.test_args)
         sys.exit(errcode)
+
         
 setup(
     name='listwise',
@@ -40,10 +43,8 @@ setup(
     license='Apache Software License',
     author='Zeke Barge',
     tests_require=['pytest'],
-    install_requires=['requests>=2.10.0',
-                    'sqlite3>=1.0.0',
-                    'pandas>=0.18.1',
-                    'configparser>=1.0.0'
+    install_requires=['requests>=2.5.4.1',
+                    'pandas',
                     ],
     cmdclass={'test': PyTest},
     author_email='zekebarge@gmail.com',
@@ -70,3 +71,4 @@ setup(
         'testing': ['pytest'],
     }
 )
+
